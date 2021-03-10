@@ -4,10 +4,16 @@ from pydub import AudioSegment
 from gtts import gTTS
 
 def textToSpeech(text,fileName):
-    pass
+    mytext=str(text)
+    language='hi'
+    myobj=gTTS(text=mytext,lang = language,slow=False)
+    myobj.save(fileName)
 
 def mergeAudios(audios):
-    pass
+    combined = AudioSegment.empty()
+    for audio in audios:
+        combined +=AudioSegment.from_mp3(audio)
+    return combined
 
 def generateSkeleton():
     audio = AudioSegment.from_mp3('railway.mp3')
