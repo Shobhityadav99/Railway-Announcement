@@ -47,7 +47,11 @@ def generateSkeleton():
 
 
 def generateAnnouncement(fileName):
-    pass
+    df= pd.read_excel(fileName)
+    print(df)
+    for index,item in df.iterrows():
+        pass
 
 if __name__ == "__main__":
     generateSkeleton()
+    generateAnnouncement("announce_hindi.xlsx")
