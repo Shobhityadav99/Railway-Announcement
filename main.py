@@ -50,7 +50,17 @@ def generateAnnouncement(fileName):
     df= pd.read_excel(fileName)
     print(df)
     for index,item in df.iterrows():
-        pass
+        textToSpeech(item['from'],"2_hindi.mp3")
+        textToSpeech(item['via'],"4_hindi.mp3")
+        textToSpeech(item['to'],"6_hindi.mp3")
+        textToSpeech(item['train_no']+" "+item['train_name'],"8_hindi.mp3")
+        textToSpeech(item['platform'],"10_hindi.mp3")
+
+        audios = [f"{i}_hindi.mp3" for i in range(1,12)]
+
+        announcement=mergeAudios(audios)
+        announcement.export(f"announcement_{index+1}.mp3",format="mp3")
+
 
 if __name__ == "__main__":
     generateSkeleton()
