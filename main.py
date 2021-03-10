@@ -29,6 +29,22 @@ def generateSkeleton():
     audioprocessed.export("5_hindi.mp3",format="mp3")
 
 
+    start = 96000
+    finish = 98900
+    audioprocessed = audio[start:finish]
+    audioprocessed.export("7_hindi.mp3",format="mp3")
+
+    start = 105500
+    finish = 108200
+    audioprocessed = audio[start:finish]
+    audioprocessed.export("9_hindi.mp3",format="mp3")
+
+    start = 109000
+    finish = 112250
+    audioprocessed = audio[start:finish]
+    audioprocessed.export("11_hindi.mp3",format="mp3")
+
+
 
 def generateAnnouncement(fileName):
     pass
